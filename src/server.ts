@@ -1,20 +1,20 @@
-import express from 'express'
+import express from 'express';
 
-const app = express()
+const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
 app.post('/users', (request, response) => {
-  const {name, email} = request.body;
+  const { name, email } = request.body;
 
   const user = {
-    name, 
-    email
-  }
+    name,
+    email,
+  };
 
-  return response.json(user)
-})
+  return response.json(user);
+});
 
 app.listen(3333, () => {
-  console.log('Server started')
-})
+  console.log('Server started');
+});
