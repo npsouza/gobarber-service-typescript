@@ -29,6 +29,15 @@
         "argsIgnorePattern": "_"
       }],
       "class-methods-use-this": "off",
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "interface",
+          "prefix": ["I"],
+          "format": ["PascalCase"]
+        }
+      ],
+      "no-useless-constructor": "off",
       "import/extensions": [
         "error",
         "ignorePackages",
