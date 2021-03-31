@@ -16,7 +16,7 @@ describe('CreateUser', () => {
     createUser = new CreateUserService(fakeUsersRepository, fakeHashProvider);
   });
 
-  it('shoud be able to create a new user', async () => {
+  it('should be able to create a new user', async () => {
     const user = await createUser.execute({
       name: 'Jonh Doe',
       email: 'johndoe@example.com',
@@ -25,7 +25,7 @@ describe('CreateUser', () => {
 
     expect(user).toHaveProperty('id');
   });
-  it('shoud not be able to create a new user with existing email', async () => {
+  it('should not be able to create a new user with existing email', async () => {
     await createUser.execute({
       name: 'Jonh Doe',
       email: 'johndoe@example.com',

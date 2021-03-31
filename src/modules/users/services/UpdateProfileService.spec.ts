@@ -18,7 +18,7 @@ describe('UpdateProfile', () => {
     );
   });
 
-  it('shoud be able to update the profile', async () => {
+  it('should be able to update the profile', async () => {
     const user = await fakeUsersRepository.create({
       name: 'Jonh Doe',
       email: 'johndoe@example.com',
@@ -35,7 +35,7 @@ describe('UpdateProfile', () => {
     expect(updateUser.email).toBe('johntre@example.com');
   });
 
-  it('shoud not be able to change to another user email', async () => {
+  it('should not be able to change to another user email', async () => {
     await fakeUsersRepository.create({
       name: 'Jonh Doe',
       email: 'johndoe@example.com',
@@ -57,7 +57,7 @@ describe('UpdateProfile', () => {
     ).rejects.toBeInstanceOf(AppError);
   });
 
-  it('shoud be able to update the password', async () => {
+  it('should be able to update the password', async () => {
     const user = await fakeUsersRepository.create({
       name: 'Jonh Doe',
       email: 'johndoe@example.com',
@@ -75,7 +75,7 @@ describe('UpdateProfile', () => {
     expect(updateUser.password).toBe('123123');
   });
 
-  it('shoud not be able to update the password without old password', async () => {
+  it('should not be able to update the password without old password', async () => {
     const user = await fakeUsersRepository.create({
       name: 'Jonh Doe',
       email: 'johndoe@example.com',
@@ -92,7 +92,7 @@ describe('UpdateProfile', () => {
     ).rejects.toBeInstanceOf(AppError);
   });
 
-  it('shoud not be able to update the password with wrong old password', async () => {
+  it('should not be able to update the password with wrong old password', async () => {
     const user = await fakeUsersRepository.create({
       name: 'Jonh Doe',
       email: 'johndoe@example.com',
@@ -110,7 +110,7 @@ describe('UpdateProfile', () => {
     ).rejects.toBeInstanceOf(AppError);
   });
 
-  it('shoud not be able to update the profile from non-existing user', async () => {
+  it('should not be able to update the profile from non-existing user', async () => {
     await expect(
       updateProfile.execute({
         user_id: 'non-existing-user-id',

@@ -19,7 +19,7 @@ describe('UpdateUserAvatar', () => {
     );
   });
 
-  it('shoud be able to update user avatar', async () => {
+  it('should be able to update user avatar', async () => {
     const user = await fakeUsersRepository.create({
       name: 'Jonh Doe',
       email: 'johndoe@example.com',
@@ -33,7 +33,7 @@ describe('UpdateUserAvatar', () => {
 
     expect(user.avatar).toBe('avatar.jpg');
   });
-  it('shoud not be able to update non existing user', async () => {
+  it('should not be able to update non existing user', async () => {
     await expect(
       updateUserAvatar.execute({
         user_id: 'non-existing-user',
@@ -42,7 +42,7 @@ describe('UpdateUserAvatar', () => {
     ).rejects.toBeInstanceOf(AppError);
   });
 
-  it('shoud delete old avatar when updating new one', async () => {
+  it('should delete old avatar when updating new one', async () => {
     const deleteFile = jest.spyOn(fakeStorageProvider, 'deleteFile');
 
     const user = await fakeUsersRepository.create({
