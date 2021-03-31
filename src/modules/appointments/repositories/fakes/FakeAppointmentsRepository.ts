@@ -1,4 +1,4 @@
-import { uuid } from 'uuidv4';
+import { v4 } from 'uuid';
 
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 
@@ -58,7 +58,7 @@ class FakeAppointmentsRepository implements IAppointmentsRepository {
     const appointment = new Appointment();
 
     Object.assign(appointment, {
-      id: uuid(),
+      id: v4(),
       date,
       provider_id,
     });
