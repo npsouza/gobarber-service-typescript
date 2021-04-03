@@ -68,3 +68,10 @@
 - O usuário não pode agendar em um horário já ocupado;
 - O usuário não pode agendar em um horário que já passou;
 - O usuário não pode agendar serviços consigo mesmo;
+
+## Comandos
+
+- Criando container para o PostgreSQL `docker run --name gobarber-postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres`
+- Rodar container para o PostgreSQL `docker start gobarber-postgres`
+- Criando container para o MongoDB `docker run --name mongodb -p 27017:27017 -d -t mongo`
+- Rodar container para o MongoDB `docker start mongodb`
