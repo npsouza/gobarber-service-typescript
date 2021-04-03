@@ -73,5 +73,9 @@
 
 - Criando container para o PostgreSQL `docker run --name gobarber-postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres`
 - Rodar container para o PostgreSQL `docker start gobarber-postgres`
+
 - Criando container para o MongoDB `docker run --name mongodb -p 27017:27017 -d -t mongo`
 - Rodar container para o MongoDB `docker start mongodb`
+
+- Criando container para Redis `docker run --name redis -p 6379:6379 -d -t redis:alpine`
+- Rodar container do Redis `docker start redis`
