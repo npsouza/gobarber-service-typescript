@@ -43,8 +43,6 @@ class ListProviderAppointmentsService {
         },
       );
 
-      console.info('query');
-
       await this.cacheProvider.save(cacheKey, appointments);
     }
 
